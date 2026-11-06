@@ -161,7 +161,7 @@ function getInitialData() {
     withdrawals: [],
     settings: {
       upiId: 'growcapital@icici',
-      payeeName: 'Apex Capital Ventures Ltd',
+      payeeName: 'ACS Groups Ltd',
       supportEmail: 'compliance@growcapital.in',
       supportPhone: '+91 80 4910 8800',
       minLotSize: 10,

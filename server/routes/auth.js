@@ -46,7 +46,7 @@ router.post('/register', (req, res) => {
 
     const { passwordHash: _, ...safeUser } = newUser;
     return res.status(201).json({
-      message: 'Registration successful! Welcome to ApexVest.',
+      message: 'Registration successful! Welcome to ACS Groups.',
       token,
       user: safeUser
     });

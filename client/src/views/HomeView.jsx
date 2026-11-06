@@ -327,7 +327,7 @@ export default function HomeView({ investments, onInvest, onNavigate }) {
           <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed">
             <h4 className="font-bold text-white text-sm">Regulatory Notice & Investment Disclaimer</h4>
             <p>
-              ApexVest is a technology co-investment and asset-tracking platform. Investments in early-stage businesses, manufacturing facilities, and commodities carry capital risk. Returns are targeted based on commercial performance and are not guaranteed fixed returns. All transactions require verified banking/UPI references.
+              ACS Groups is a technology co-investment and asset-tracking platform. Investments in early-stage businesses, manufacturing facilities, and commodities carry capital risk. Returns are targeted based on commercial performance and are not guaranteed fixed returns. All transactions require verified banking/UPI references.
             </p>
           </div>
         </div>

@@ -10,7 +10,7 @@ export default function LegalModal({ type, isOpen, onClose }) {
       body: (
         <div className="space-y-4 text-xs text-slate-300 leading-relaxed">
           <p>
-            Welcome to ApexVest. By accessing this platform, creating an account, or participating in business co-funding or commodity asset allocations, you agree to these Terms.
+            Welcome to ACS Groups. By accessing this platform, creating an account, or participating in business co-funding or commodity asset allocations, you agree to these Terms.
           </p>
           <h4 className="font-bold text-white text-sm">1. Co-Investment Nature</h4>
           <p>
@@ -51,7 +51,7 @@ export default function LegalModal({ type, isOpen, onClose }) {
       body: (
         <div className="space-y-4 text-xs text-slate-300 leading-relaxed">
           <p>
-            ApexVest is committed to protecting your personal information. We store your full name, email, phone number, and transaction UTR records securely.
+            ACS Groups is committed to protecting your personal information. We store your full name, email, phone number, and transaction UTR records securely.
           </p>
           <p>
             All passwords are encrypted using one-way salted cryptographic hashing (bcrypt). We never store or transmit plain-text credentials.

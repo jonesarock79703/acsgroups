@@ -63,7 +63,7 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
     timestamp: new Date().toISOString(),
-    service: 'ApexVest Investment Engine v2.4'
+    service: 'ACS Groups Investment Engine v2.4'
   });
 });
 
@@ -87,7 +87,7 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(`===============================================`);
-  console.log(`🚀 ApexVest Backend Server active on port ${PORT}`);
+  console.log(`🚀 ACS Groups Backend Server active on port ${PORT}`);
   console.log(`📡 API endpoint: http://localhost:${PORT}/api`);
   console.log(`===============================================`);
 });

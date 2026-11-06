@@ -12,8 +12,8 @@ router.get('/company-details', async (req, res) => {
     res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     const settings = db.getSettings();
     const upiId = settings.upiId || 'growcapital@icici';
-    const payeeName = settings.payeeName || 'Apex Capital Ventures Ltd';
-    const upiUri = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&cu=INR&tn=${encodeURIComponent('ApexVest Investment')}`;
+    const payeeName = settings.payeeName || 'ACS Groups Ltd';
+    const upiUri = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&cu=INR&tn=${encodeURIComponent('ACS Groups Investment')}`;
 
     // If admin set a custom QR URL or image, use it; otherwise generate dynamic QR from UPI ID
     let qrUrl = settings.paymentQrUrl || null;
@@ -50,8 +50,8 @@ router.get('/qr-image', async (req, res) => {
     res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     const settings = db.getSettings();
     const upiId = settings.upiId || 'growcapital@icici';
-    const payeeName = settings.payeeName || 'Apex Capital Ventures Ltd';
-    const upiUri = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&cu=INR&tn=${encodeURIComponent('ApexVest Investment')}`;
+    const payeeName = settings.payeeName || 'ACS Groups Ltd';
+    const upiUri = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&cu=INR&tn=${encodeURIComponent('ACS Groups Investment')}`;
 
     // If custom uploaded QR exists
     if (settings.paymentQrUrl) {
@@ -108,7 +108,7 @@ router.get('/qr', authenticate, async (req, res) => {
 
     const settings = db.getSettings();
     const upiId = settings.upiId || 'growcapital@icici';
-    const payeeName = settings.payeeName || 'Apex Capital Ventures Ltd';
+    const payeeName = settings.payeeName || 'ACS Groups Ltd';
     const numAmount = Number(amount);
     const refCode = `REF-${Date.now().toString().slice(-6)}`;
 

@@ -1,5 +1,5 @@
 {
-  "name": "apexvest-investment-platform",
+  "name": "acsgroups-investment-platform",
   "version": "1.0.0",
   "description": "Modern secure full-stack investment platform with business funding, community assets, and payment verification",
   "main": "server/server.js",
@@ -20,7 +20,7 @@
     "silver",
     "real-estate"
   ],
-  "author": "ApexVest",
+  "author": "ACS Groups",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",

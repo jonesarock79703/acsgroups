@@ -25,7 +25,7 @@ export default function InvestModal({ investment, isOpen, onClose, onSuccess }) 
   // Platform company payment details
   const [companyDetails, setCompanyDetails] = useState({
     upiId: 'growcapital@icici',
-    payeeName: 'Apex Capital Ventures Ltd',
+    payeeName: 'ACS Groups Ltd',
     companyBankName: 'HDFC Bank Ltd',
     companyAccountNumber: '50200088991122',
     companyIfsc: 'HDFC0001234',
@@ -416,7 +416,7 @@ export default function InvestModal({ investment, isOpen, onClose, onSuccess }) 
 
                     {/* Mobile Quick UPI Intent Link */}
                     <a
-                      href={companyDetails.upiUri || `upi://pay?pa=${companyDetails.upiId}&pn=${encodeURIComponent(companyDetails.payeeName)}&cu=INR&tn=${encodeURIComponent('ApexVest Investment')}`}
+                      href={companyDetails.upiUri || `upi://pay?pa=${companyDetails.upiId}&pn=${encodeURIComponent(companyDetails.payeeName)}&cu=INR&tn=${encodeURIComponent('ACS Groups Investment')}`}
                       className="inline-flex sm:hidden items-center justify-center gap-1.5 w-full py-1.5 px-3 rounded-lg bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 border border-emerald-500/40 text-xs font-bold transition"
                     >
                       <Sparkles className="w-3.5 h-3.5 text-emerald-400" />

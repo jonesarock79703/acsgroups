@@ -12,7 +12,7 @@ export default function Footer({ onOpenLegal }) {
             <span>STATUTORY REGULATORY RISK DISCLOSURE & PROTOTYPE NOTICE</span>
           </div>
           <p className="text-slate-300">
-            ApexVest operates as an educational and prototype co-investment & fractional asset reserve technology platform. Co-investing in private businesses, manufacturing operations, commodities (gold, silver), or real-estate fractional assets involves substantial risk of loss. Projected yields and returns are non-guaranteed estimates and subject to commercial performance and market volatility.
+            ACS Groups operates as an educational and prototype co-investment & fractional asset reserve technology platform. Co-investing in private businesses, manufacturing operations, commodities (gold, silver), or real-estate fractional assets involves substantial risk of loss. Projected yields and returns are non-guaranteed estimates and subject to commercial performance and market volatility.
           </p>
           <p className="text-slate-400">
             This portal does not constitute a public offer of securities, collective investment scheme (CIS), or deposit scheme. All Indian securities, payment processing, KYC/AML, and taxation guidelines must be complied with prior to production commercial deployment.
@@ -21,7 +21,7 @@ export default function Footer({ onOpenLegal }) {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h4 className="font-bold text-white text-sm mb-3">ApexVest Platform</h4>
+            <h4 className="font-bold text-white text-sm mb-3">ACS Groups Platform</h4>
             <ul className="space-y-2 text-xs">
               <li><button onClick={() => onOpenLegal('about')} className="hover:text-emerald-400 transition">About the Engine</button></li>
               <li><button onClick={() => onOpenLegal('business')} className="hover:text-emerald-400 transition">Business Lot System (₹10/lot)</button></li>
@@ -61,7 +61,7 @@ export default function Footer({ onOpenLegal }) {
         </div>
 
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p>© 2026 Apex Capital Ventures Ltd. All rights reserved.</p>
+          <p>© 2026 ACS Groups Ltd. All rights reserved.</p>
           <div className="flex items-center gap-4 text-slate-500">
             <span>ISO 27001 Security Aligned</span>
             <span>•</span>

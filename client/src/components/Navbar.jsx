@@ -53,7 +53,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAuth }) {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-xl font-black tracking-tight text-white group-hover:text-emerald-300 transition">
-                  Apex<span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Vest</span>
+                  ACS<span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Groups</span>
                 </span>
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono font-bold">
                   PRO

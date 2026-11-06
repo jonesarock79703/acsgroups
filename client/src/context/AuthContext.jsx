@@ -5,7 +5,7 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     try {
-      const saved = localStorage.getItem('apexvest_user');
+      const saved = localStorage.getItem('acsgroups_user') || localStorage.getItem('apexvest_user');
       return saved ? JSON.parse(saved) : null;
     } catch {
       return null;
@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   });
 
   const [token, setToken] = useState(() => {
-    return localStorage.getItem('apexvest_token') || null;
+    return localStorage.getItem('acsgroups_token') || localStorage.getItem('apexvest_token') || null;
   });
 
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
       if (res.ok) {
         const data = await res.json();
         setUser(data.user);
-        localStorage.setItem('apexvest_user', JSON.stringify(data.user));
+        localStorage.setItem('acsgroups_user', JSON.stringify(data.user));
       } else if (res.status === 401) {
         logout();
       }
@@ -60,8 +60,8 @@ export const AuthProvider = ({ children }) => {
 
       setToken(data.token);
       setUser(data.user);
-      localStorage.setItem('apexvest_token', data.token);
-      localStorage.setItem('apexvest_user', JSON.stringify(data.user));
+      localStorage.setItem('acsgroups_token', data.token);
+      localStorage.setItem('acsgroups_user', JSON.stringify(data.user));
       setAuthModalOpen(false);
       return data.user;
     } finally {
@@ -84,8 +84,8 @@ export const AuthProvider = ({ children }) => {
 
       setToken(data.token);
       setUser(data.user);
-      localStorage.setItem('apexvest_token', data.token);
-      localStorage.setItem('apexvest_user', JSON.stringify(data.user));
+      localStorage.setItem('acsgroups_token', data.token);
+      localStorage.setItem('acsgroups_user', JSON.stringify(data.user));
       setAuthModalOpen(false);
       return data.user;
     } finally {
@@ -96,6 +96,8 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setToken(null);
     setUser(null);
+    localStorage.removeItem('acsgroups_token');
+    localStorage.removeItem('acsgroups_user');
     localStorage.removeItem('apexvest_token');
     localStorage.removeItem('apexvest_user');
   };
