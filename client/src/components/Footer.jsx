@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Shield, AlertTriangle, FileText, Lock, ExternalLink } from 'lucide-react';
 
-export default function Footer({ onOpenLegal }) {
+export default function Footer({ onOpenLegal, onGoToAdmin }) {
   return (
     <footer className="glass-panel border-t border-white/10 text-xs text-slate-400 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-10">
@@ -62,10 +62,23 @@ export default function Footer({ onOpenLegal }) {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© 2026 ACS Groups Ltd. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-slate-500">
+          <div className="flex items-center gap-3 text-slate-500">
             <span>ISO 27001 Security Aligned</span>
             <span>•</span>
             <span>Bank Grade 256-bit Encryption</span>
+            {onGoToAdmin && (
+              <>
+                <span>•</span>
+                <button
+                  type="button"
+                  onClick={onGoToAdmin}
+                  className="text-slate-600 hover:text-amber-400/80 transition cursor-pointer"
+                  title="Restricted Staff Portal"
+                >
+                  Admin
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>

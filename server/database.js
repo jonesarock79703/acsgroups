@@ -21,16 +21,6 @@ function getInitialData() {
         role: 'admin',
         kycStatus: 'verified',
         createdAt: '2026-09-01T10:00:00.000Z'
-      },
-      {
-        id: 'USR-10025',
-        name: 'Rahul Sharma',
-        email: 'investor@demo.com',
-        mobile: '+91 98123 45678',
-        passwordHash: userPasswordHash,
-        role: 'user',
-        kycStatus: 'verified',
-        createdAt: '2026-09-15T12:00:00.000Z'
       }
     ],
     investments: [

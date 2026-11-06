@@ -112,15 +112,6 @@ export const AuthProvider = ({ children }) => {
     setAuthModalOpen(false);
   };
 
-  // One-click demo switches for instant review
-  const loginAsDemoInvestor = () => {
-    return login('investor@demo.com', 'investor123', 'user');
-  };
-
-  const loginAsAdmin = () => {
-    return login('admin@investment.com', 'admin123', 'admin');
-  };
-
   return (
     <AuthContext.Provider
       value={{
@@ -138,9 +129,7 @@ export const AuthProvider = ({ children }) => {
         openAuthModal,
         closeAuthModal,
         setAuthModalMode,
-        setAuthModalRole,
-        loginAsDemoInvestor,
-        loginAsAdmin
+        setAuthModalRole
       }}
     >
       {children}

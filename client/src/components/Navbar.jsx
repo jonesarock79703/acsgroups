@@ -7,8 +7,8 @@ import {
 import { useAuth } from '../context/AuthContext';
 import NotificationsDropdown from './NotificationsDropdown';
 
-export default function Navbar({ activeTab, setActiveTab, onOpenAuth }) {
-  const { user, isAdmin, logout, loginAsDemoInvestor, loginAsAdmin } = useAuth();
+export default function Navbar({ activeTab, setActiveTab, onOpenAuth, onGoToAdmin }) {
+  const { user, isAdmin, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
@@ -20,9 +20,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAuth }) {
       { id: 'portfolio', label: 'My Investments' },
       { id: 'transactions', label: 'Transactions' },
       { id: 'profile', label: 'Profile' }
-    ] : []),
-    ...(isAdmin ? [
-      { id: 'admin', label: 'Admin Portal', highlight: true }
     ] : [])
   ];
 
@@ -98,27 +95,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAuth }) {
 
           {/* Right Action Cluster */}
           <div className="flex items-center gap-2.5">
-            {/* Quick Demo Switcher (When not logged in) */}
-            {!user && (
-              <div className="hidden sm:flex items-center gap-1.5 glass-panel p-1 rounded-2xl border-white/10 shadow-lg">
-                <button
-                  onClick={() => loginAsDemoInvestor()}
-                  className="px-3 py-1.5 text-[11px] font-bold text-slate-200 hover:text-emerald-300 hover:bg-emerald-500/15 rounded-xl transition cursor-pointer"
-                  title="Instant login with pre-configured investor profile"
-                >
-                  ⚡ Demo User
-                </button>
-                <span className="text-slate-600">|</span>
-                <button
-                  onClick={() => loginAsAdmin()}
-                  className="px-3 py-1.5 text-[11px] font-bold text-amber-300 hover:text-amber-200 hover:bg-amber-500/15 rounded-xl transition cursor-pointer"
-                  title="Instant login as platform admin"
-                >
-                  🛡️ Admin
-                </button>
-              </div>
-            )}
-
             {/* Notifications */}
             {user && <NotificationsDropdown />}
 
@@ -178,11 +154,14 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAuth }) {
 
                     {isAdmin && (
                       <button
-                        onClick={() => handleNavClick('admin')}
+                        onClick={() => {
+                          setUserMenuOpen(false);
+                          if (onGoToAdmin) onGoToAdmin();
+                        }}
                         className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs text-amber-400 hover:bg-amber-500/10 flex items-center gap-2 mt-1 border-t border-slate-800 pt-2 font-semibold"
                       >
                         <Shield className="w-3.5 h-3.5 text-amber-400" />
-                        Admin Dashboard
+                        Admin Console (/admin)
                       </button>
                     )}
 

@@ -20,7 +20,7 @@ const IMAGE_PRESETS = [
   { label: 'Logistics Hub', url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80' }
 ];
 
-export default function AdminDashboardView({ onInvestmentUpdated }) {
+export default function AdminDashboardView({ onInvestmentUpdated, onExitToSite }) {
   const { token } = useAuth();
   const [activeTab, setActiveTab] = useState('products'); // 'products' | 'draws' | 'withdrawals' | 'payments' | 'businesses' | 'assets' | 'users' | 'settings'
   const [stats, setStats] = useState(null);
@@ -895,6 +895,16 @@ export default function AdminDashboardView({ onInvestmentUpdated }) {
             <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
             <span>Refresh</span>
           </button>
+
+          {onExitToSite && (
+            <button
+              onClick={onExitToSite}
+              className="px-4 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-2 cursor-pointer transition border border-slate-700 shadow-md"
+            >
+              <span>Exit to Investor Site</span>
+              <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
+            </button>
+          )}
         </div>
       </div>
 
